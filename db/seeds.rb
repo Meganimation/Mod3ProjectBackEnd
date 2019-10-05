@@ -19,21 +19,21 @@ fresh = Bread.create(name: 'Fresh out of the oven', breadtype: 'Loaf', imgurl: '
 brown = Bread.create(name: 'Good-4-U Bread', breadtype: 'Brown', imgurl: 'https://www.simplyrecipes.com/wp-content/uploads/2017/02/2017-03-11-IrishBrownBread-2.jpg')
 
 
-comment1 = Comment.create(content: 'Is good bread', bread: white)
-comment2 = Comment.create(content: 'Is bread', bread: normie)
-comment3 = Comment.create(content: 'Is lovely bread', bread: french)
-comment4 = Comment.create(content: 'Is meh bread', bread: normie)
-comment5 = Comment.create(content: 'Is bad bread', bread: crouton)
-comment6 = Comment.create(content: 'git dat bread', bread: devbread)
-comment7 = Comment.create(content: 'Is just bread bread', bread: brown)
-comment8 = Comment.create(content: "Who tf makes an app like this? one-star review do not bother, app doesn't even work properly. ", bread: wholegrain)
-comment9 = Comment.create(content: 'Is healthy bread', bread: wholegrain)
-comment10 = Comment.create(content: 'Is best bread', bread: garlic)
-comment11 = Comment.create(content: 'Is bready.', bread: fresh)
+comment1 = Comment.create(content: 'Is good bread', bread_id: 1)
+comment2 = Comment.create(content: 'Is bread', bread_id: 2)
+comment3 = Comment.create(content: 'Is lovely bread', bread_id: 3)
+comment4 = Comment.create(content: 'Is meh bread', bread_id: 4)
+comment5 = Comment.create(content: 'Is bad bread', bread_id: 5)
+comment6 = Comment.create(content: 'git dat bread', bread_id: 6)
+comment7 = Comment.create(content: 'Is just bread bread', bread_id: 7)
+comment8 = Comment.create(content: "Who tf makes an app like this? one-star review do not bother, app doesn't even work properly. ", bread_id: wholegrain)
+comment9 = Comment.create(content: 'Is healthy bread', bread_id: 8)
+comment10 = Comment.create(content: 'Is best bread', bread_id: 9)
+comment11 = Comment.create(content: 'Is bready.', bread_id: 10)
 
 
 
-Bread.all.each do  |bread|  
-    bread.comments << Comment.new(content: 'meh')   
-end
+# Bread.all.each do  |bread|  
+#     bread.comments << Comment.new(content: 'meh')   
+# end
 

@@ -3,9 +3,12 @@ class CommentsController < ApplicationController
 
     def index 
         comments = Comment.all
-        render json: comments
-    
+        render json: @comments
+    end
+
+
       def show
+        set_comment
         render json: @comment
       end
     
@@ -24,17 +27,19 @@ class CommentsController < ApplicationController
       end
     
       def update
-        if @comment.update(comment_params)
-          render json: @comment
-        else
-          render json: @comment.errors, status: :unprocessable_entity
-        end
-      end
+        comment = Comment.find(params[:id])
+          if comment.update(comment_params)
+            render json: comment
+          else 
+            render json: { errors: comment.errors } 
+          end
+      end 
     
     
     
     
       def destroy
+        @comment = Comment.find(params[:id])
         @comment.destroy
       end
     
@@ -45,6 +50,6 @@ class CommentsController < ApplicationController
       end
     
       def comment_params
-        params.require(:comment).permit(:content, :bread_id)
+        params.permit(:content, :bread_id)
       end
     end
