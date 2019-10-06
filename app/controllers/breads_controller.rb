@@ -1,4 +1,4 @@
-class BreadsController < ApplicationController
+class BreadsController < ApiController
 
 
 def index 
